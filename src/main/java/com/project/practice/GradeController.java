@@ -11,6 +11,8 @@ public class GradeController {
     public String getGrades(Model model) {
         Grade grade = new Grade("Meli", "B+", "Math");
         model.addAttribute("grade", grade);
+        model.addAttribute("sales", 300);
+        model.addAttribute("product", "table");
         return "grades";
     }
 }
