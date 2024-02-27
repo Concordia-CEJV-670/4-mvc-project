@@ -1,11 +1,15 @@
 package com.project.practice;
 
+import java.util.UUID;
+
 public class Grade {
     private String name;
     private String score;
     private String subject;
+    private String id;
 
     public Grade() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public Grade(String name, String score, String subject) {
@@ -38,4 +42,11 @@ public class Grade {
         this.subject = subject;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
