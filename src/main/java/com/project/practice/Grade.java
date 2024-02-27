@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 public class Grade {
     @NotBlank(message = "Name cannot be blank")
     private String name;
+    @Score(message = "Score must be a valid letter grade")
     private String score;
     @NotBlank(message = "Subject cannot be blank")
     private String subject;
