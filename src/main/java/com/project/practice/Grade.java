@@ -2,9 +2,13 @@ package com.project.practice;
 
 import java.util.UUID;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class Grade {
+    @NotBlank(message = "Name cannot be blank")
     private String name;
     private String score;
+    @NotBlank(message = "Subject cannot be blank")
     private String subject;
     private String id;
 
