@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class GradeController {
@@ -20,8 +23,12 @@ public class GradeController {
         return "grades";
     }
 
-    @PostMapping("handleSubmit")
-    public String submitGradeForm(Grade grade) {
+    @PostMapping("/handleSubmit")
+    public String submitGradeForm(@Valid Grade grade, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "form";
+        }
+
         int index = getGradeIndex(grade.getId());
         if (index == Constants.NOT_FOUND) {
             studentGrades.add(grade);
