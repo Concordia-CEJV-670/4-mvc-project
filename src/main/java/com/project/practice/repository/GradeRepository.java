@@ -3,8 +3,11 @@ package com.project.practice.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.project.practice.Grade;
 
+@Component
 public class GradeRepository {
     private List<Grade> studentGrades = new ArrayList<>();
 
