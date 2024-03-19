@@ -2,12 +2,17 @@ package com.project.practice.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.project.practice.Constants;
 import com.project.practice.Grade;
 import com.project.practice.repository.GradeRepository;
 
+@Service
 public class GradeService {
-    GradeRepository gradeRepository = new GradeRepository();
+    @Autowired
+    GradeRepository gradeRepository;
 
     public Grade getGrade(int index) {
         return gradeRepository.getGrade(index);
