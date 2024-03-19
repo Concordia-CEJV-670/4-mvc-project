@@ -2,9 +2,17 @@ package com.project.practice.service;
 
 import java.util.List;
 
-import com.project.practice.entity.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.project.practice.entity.Student;
+import com.project.practice.repository.StudentRepository;
+
+@Service
 public class StudentServiceImpl implements StudentService {
+
+    @Autowired
+    StudentRepository studentRepository;
 
     @Override
     public Student getStudent(Long id) {
@@ -13,7 +21,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student saveStudent(Student student) {
-        return null;
+        return studentRepository.save(student);
     }
 
     @Override

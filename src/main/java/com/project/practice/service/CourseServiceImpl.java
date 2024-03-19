@@ -2,8 +2,11 @@ package com.project.practice.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.project.practice.entity.Course;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 
     @Override
